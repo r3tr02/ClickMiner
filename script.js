@@ -3,36 +3,42 @@ var clickCounter = 0;
 var offers = {
     hand: {
         speed: 0.1,
+        image: "Hand.jpg",
     },
     woodPickaxe: {
         price: 30,
         speed: 0.2,
-        image: "Wooden_Pickaxe.png"
+        image: "Wooden_Pickaxe.png",
+        name: "Holzspitzhacke",
     },
     stonePickaxe: {
         price: 70,
         speed: 0.5,
-        image: "Iron_Pickaxe.png",
+        image: "Stone_Pickaxe.png",
+        name: "Steinspitzhacke",
     },
     ironPickaxe: {
         price: 90,
         speed: 1.2,
-        image: "Fehlt",
+        image: "Iron_Pickaxe.png",
+        name: "Eisenspitzhacke",
     },
     goldPickaxe: {
         price: 100,
         speed: 1.5,
-        image: "Fehlt",
+        image: "Gold_Pickaxe.png",
+        name: "Goldspitzhacke",
     },
     diamondPickaxe: {
         price: 150,
         speed: 2,
-        image: "Fehlt",
+        image: "Diamond_Pickaxe.png",
+        name: "Diamantspitzhacke"
     }
 }
 
 function refresh(){
-    document.getElementById("clickCounter").innerHTML = clickCounter.toFixed(1)
+    document.getElementById("clickCounter").innerHTML = clickCounter.toFixed(1);
 }
 
 refresh();
@@ -53,9 +59,10 @@ console.log(buttons);
             clickCounter = clickCounter - offers[btn.id].price;
             refresh();
             document.querySelector("#imgPickaxe").src = "Texturen/" + offers[btn.id].image;
+            document.querySelector("#werkzeug").innerHTML = offers[btn.id].name
         }
         else{
-            alert("DU HAST NICHT GENUG GELD!!!!!!!!")
+            alert("Du hast nicht genug Geld um " + offers[btn.id].name + " zu kaufen!");
         }
     
     });

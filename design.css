@@ -75,6 +75,14 @@ header {
     width: 75px;
 }
 
-#styleDiv {
+.styleDiv {
     position: relative;
+}
+
+#werkzeugText {
+    font-family: Minecraftia;
+    position: absolute;
+    top: 0px;
+    left: 55%;
+    color: white;
 }
