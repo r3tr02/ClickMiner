@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Minecrafter';
+    src: url(Fonts/minecrafter/Minecrafter.Reg.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Minecraftia';
+    src: url(Fonts/minecraftia/Minecraftia.ttf) format('truetype');
+  }
+
+*{
+    box-sizing: border-box;
+}
+
+#header {
+    font-family: Minecrafter;
+    text-align: center;
+    margin: 0px;
+}
+
+body {
+    text-align: center;
+    background: url(Texturen/MCBackground.png) black;
+    margin: 0px;
+}
+
+header {
+    background: url(Texturen/GrassMCBackground.png);
+    height: 146px;
+    padding-top: 8px;
+}
+
+#clickButton {
+    height: 150px;
+    width: 150px;
+    background: url(Texturen/150px-Diamond_Ore.png);
+    border: none;
+    outline: none;
+    margin-top: 50px;
+    }
+
+#diamondText {
+    font-family: Minecraftia;
+    font-size: 40px;
+    color: aqua;
+}
+
+.button {
+    margin: 20px;
+    width: 100%;
+    color: white ;
+    background: transparent;
+    font-family: Minecraftia;
+    font-size: 30px;
+    border: 1px solid blue;
+    padding: 4px;
+    outline: none;
+    display: block;
+}
+
+#shop {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#currentSlot {
+    float: right;
+}
+
+#imgPickaxe {
+    position: absolute;
+    top: 70px;
+    left: 60%;
+    height: 75px;
+    width: 75px;
+}
+
+#styleDiv {
+    position: relative;
+}
