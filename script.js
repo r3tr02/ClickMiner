@@ -1,32 +1,32 @@
 var current = "hand"
-var clickCounter = 10;
+var clickCounter = 0;
 var offers = {
     hand: {
         speed: 0.1,
     },
     woodPickaxe: {
-        price: 10,
+        price: 30,
         speed: 0.2,
         image: "Wooden_Pickaxe.png"
     },
     stonePickaxe: {
-        price: 11,
+        price: 70,
         speed: 0.5,
         image: "Iron_Pickaxe.png",
     },
     ironPickaxe: {
-        price: 15,
-        speed: 1,
+        price: 90,
+        speed: 1.2,
         image: "Fehlt",
     },
     goldPickaxe: {
-        price: 20,
-        speed: 1,
+        price: 100,
+        speed: 1.5,
         image: "Fehlt",
     },
     diamondPickaxe: {
-        price: 20,
-        speed: 1,
+        price: 150,
+        speed: 2,
         image: "Fehlt",
     }
 }
