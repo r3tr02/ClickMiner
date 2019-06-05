@@ -46,7 +46,7 @@ header {
 }
 
 .button {
-    margin: 20px;
+    margin: 20px 0px;
     width: 100%;
     color: white ;
     background: transparent;
@@ -85,4 +85,18 @@ header {
     top: 160px;
     left: 55%;
     color: white;
+}
+
+.speed {
+    font-family: Minecraftia;
+}
+
+@media (max-width: 640px) {
+    .button {
+        font-size: 14px;
+    }
+    #shop {
+        width: 90%;
+        margin: 0 auto;
+    }
 }

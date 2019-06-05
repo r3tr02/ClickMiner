@@ -53,6 +53,8 @@ var buttons = document.querySelectorAll(".button");
 console.log(buttons);
 
 [].forEach.call(buttons, function(btn) {
+    
+    console.log(btn)
     btn.addEventListener("click",function(e) {
         if(clickCounter > offers[btn.id].price || clickCounter === offers[btn.id].price){
             if(btn.id === current) {
@@ -69,7 +71,7 @@ console.log(buttons);
         else{
             alert("Du hast nicht genug Geld um " + offers[btn.id].name + " zu kaufen!");
         }
-    
+                
     });
     
 });
