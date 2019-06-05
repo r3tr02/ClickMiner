@@ -40,8 +40,9 @@ var offers = {
 }
 
 var savedClickCounter = localStorage.getItem("myClickCounter")
-clickCounter = parseFloat(savedClickCounter)  
-
+if(savedClickCounter){
+    clickCounter = parseFloat(savedClickCounter)  
+}
 
 function refresh(){
     localStorage.setItem("myClickCounter", clickCounter)
@@ -83,7 +84,7 @@ var buttons = document.querySelectorAll(".button");
             alert("Du hast nicht genug Geld um " + offers[btn.id].name + " zu kaufen!");
         }
     });    
-});
+});a
 
 document.getElementById("header").addEventListener("click",function(e){
     diamond_click_sound.play()
