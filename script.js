@@ -1,5 +1,5 @@
 var current = "hand"
-var clickCounter = 0;
+var clickCounter = 3000;
 var offers = {
     hand: {
         speed: 0.1,
@@ -54,12 +54,17 @@ console.log(buttons);
 
 [].forEach.call(buttons, function(btn) {
     btn.addEventListener("click",function(e) {
-        if(clickCounter > offers[btn.id].price || clickCounter == offers[btn.id].price){
-            current = btn.id;
+        if(clickCounter > offers[btn.id].price || clickCounter === offers[btn.id].price){
+            if(btn.id === current) {
+                alert("Du besitzt diese Axt bereits!")
+            }
+            else{
+                current = btn.id;
             clickCounter = clickCounter - offers[btn.id].price;
             refresh();
             document.querySelector("#imgPickaxe").src = "Texturen/" + offers[btn.id].image;
             document.querySelector("#werkzeug").innerHTML = offers[btn.id].name
+            }
         }
         else{
             alert("Du hast nicht genug Geld um " + offers[btn.id].name + " zu kaufen!");
