@@ -63,10 +63,6 @@ header {
     margin: 0 auto;
 }
 
-#currentSlot {
-    float: right;
-}
-
 #imgPickaxe {
     position: absolute;
     top: 70px;
@@ -98,5 +94,19 @@ header {
     #shop {
         width: 90%;
         margin: 0 auto;
+    }
+    #werkzeugText {
+        font-family: Minecraftia;
+        position: absolute;
+        top: 180px;
+        left: 55%;
+        color: white;
+    }
+    #imgPickaxe {
+        position: absolute;
+        top: 70px;
+        left: 75%;
+        height: 75px;
+        width: 75px;
     }
 }

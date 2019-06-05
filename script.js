@@ -1,5 +1,5 @@
 var current = "hand"
-var clickCounter = 3000;
+var clickCounter = 0;
 var offers = {
     hand: {
         speed: 0.1,
@@ -71,7 +71,7 @@ console.log(buttons);
         else{
             alert("Du hast nicht genug Geld um " + offers[btn.id].name + " zu kaufen!");
         }
-                
+
     });
     
 });
