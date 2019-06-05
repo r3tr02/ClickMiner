@@ -1,5 +1,5 @@
 var current = "hand"
-var clickCounter = 0;
+var clickCounter = 33330;
 var offers = {
     hand: {
         speed: 0.1,
