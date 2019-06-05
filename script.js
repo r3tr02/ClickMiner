@@ -40,7 +40,7 @@ var offers = {
 }
 
 var savedClickCounter = localStorage.getItem("myClickCounter")
-if(savedClickCounter){
+if(savedClickCounter === undefined){
     clickCounter = parseFloat(savedClickCounter)  
 }
 
