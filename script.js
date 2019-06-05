@@ -1,5 +1,7 @@
 var current = "hand"
 var clickCounter = 33330;
+var activeButtonS;
+var diamond_click_sound = document.querySelector("#diamond_click_sound");
 var offers = {
     hand: {
         speed: 0.1,
@@ -44,6 +46,7 @@ function refresh(){
 refresh();
 
 document.getElementById("clickButton").addEventListener("click",function(e){
+    //diamond_click_sound.play()
     clickCounter = clickCounter + offers[current].speed;
     refresh();
 })
@@ -56,22 +59,28 @@ console.log(buttons);
     
     console.log(btn)
     btn.addEventListener("click",function(e) {
-        if(clickCounter > offers[btn.id].price || clickCounter === offers[btn.id].price){
-            if(btn.id === current) {
-                alert("Du besitzt diese Axt bereits!")
-            }
-            else{
-                current = btn.id;
-            clickCounter = clickCounter - offers[btn.id].price;
-            refresh();
-            document.querySelector("#imgPickaxe").src = "Texturen/" + offers[btn.id].image;
-            document.querySelector("#werkzeug").innerHTML = offers[btn.id].name
+        if(clickCounter >= offers[btn.id].price){
+            if(btn.id !== current) {
+                if(confirm("Möchtest du diese Spizhacke wirklich kaufen?")) {
+                    current = btn.id;
+                    clickCounter = clickCounter - offers[btn.id].price;
+                    refresh();
+                    document.querySelector("#imgPickaxe").src = "Texturen/" + offers[btn.id].image;
+                    document.querySelector("#werkzeug").innerHTML = offers[btn.id].name;
+                    if(activeButtonS !== undefined) {
+                        document.querySelector(".button.active").classList.remove("active");
+                    }    
+                    activeButtonS = btn
+                    btn.classList.add("active");
+                }
             }
         }
         else{
             alert("Du hast nicht genug Geld um " + offers[btn.id].name + " zu kaufen!");
         }
-
-    });
-    
+    });    
 });
+
+document.getElementById("header").addEventListener("click",function(e){
+    diamond_click_sound.play()
+})

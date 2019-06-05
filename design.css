@@ -103,6 +103,10 @@ header {
     transition: 1s;
 }
 
+.active {
+    border-color: aqua;
+}
+
 @media (max-width: 640px) {
     .button {
         font-size: 14px;
@@ -128,6 +132,10 @@ header {
     .button:hover {
         transform: scale(1);
         background: none;
+    }
+    .button:active {
+        transform: translateY(-15px);
+        transition: 1s;
     }
 }
 
