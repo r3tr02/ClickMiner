@@ -1,5 +1,5 @@
 var current = "hand"
-var clickCounter = 33330;
+var clickCounter = 0;
 var activeButtonS;
 var diamond_click_sound = document.querySelector("#diamond_click_sound");
 var offers = {
@@ -39,7 +39,12 @@ var offers = {
     }
 }
 
+var savedClickCounter = localStorage.getItem("myClickCounter")
+clickCounter = parseFloat(savedClickCounter)  
+
+
 function refresh(){
+    localStorage.setItem("myClickCounter", clickCounter)
     document.getElementById("clickCounter").innerHTML = clickCounter.toFixed(1);
 }
 
@@ -53,11 +58,10 @@ document.getElementById("clickButton").addEventListener("click",function(e){
 
 var buttons = document.querySelectorAll(".button");
 
-console.log(buttons);
 
 [].forEach.call(buttons, function(btn) {
     
-    console.log(btn)
+    
     btn.addEventListener("click",function(e) {
         if(clickCounter >= offers[btn.id].price){
             if(btn.id !== current) {
@@ -84,3 +88,8 @@ console.log(buttons);
 document.getElementById("header").addEventListener("click",function(e){
     diamond_click_sound.play()
 })
+
+setInterval(function(){
+    clickCounter += 0.05;
+    refresh();
+}, 1000)
